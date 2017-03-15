@@ -28,8 +28,7 @@ SOURCES += main.cpp\
     blocked.cpp
 
 HEADERS  += mainwindow.h \
-    blocked.h \
-    global.h
+    blocked.h
 
 FORMS    += mainwindow.ui \
     blocked.ui

@@ -17,6 +17,7 @@
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
@@ -33,6 +34,7 @@ public:
     QPushButton *pushButton;
     QListWidget *listWidget;
     QDialogButtonBox *buttonBox;
+    QLabel *label;
 
     void setupUi(QDialog *Blocked)
     {
@@ -68,6 +70,11 @@ public:
 
         verticalLayout->addWidget(buttonBox);
 
+        label = new QLabel(Blocked);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout->addWidget(label);
+
 
         retranslateUi(Blocked);
         QObject::connect(buttonBox, SIGNAL(accepted()), Blocked, SLOT(accept()));
@@ -80,6 +87,7 @@ public:
     {
         Blocked->setWindowTitle(QApplication::translate("Blocked", "Dialog", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Blocked", "Add site", Q_NULLPTR));
+        label->setText(QApplication::translate("Blocked", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

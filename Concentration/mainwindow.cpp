@@ -4,6 +4,11 @@
 #include <string>
 #include <fstream>
 #include "blocked.h"
+#include <QSettings>
+
+QSettings settings;
+QList webs = [];
+settings.setValue("blockedwebsites",webs);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

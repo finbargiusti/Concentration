@@ -228,8 +228,7 @@ DIST          = /opt/Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/yacc.prf \
 		/opt/Qt/5.8/gcc_64/mkspecs/features/lex.prf \
 		../Concentration/Concentration.pro ../Concentration/mainwindow.h \
-		../Concentration/blocked.h \
-		../Concentration/global.h ../Concentration/main.cpp \
+		../Concentration/blocked.h ../Concentration/main.cpp \
 		../Concentration/mainwindow.cpp \
 		../Concentration/blocked.cpp
 QMAKE_TARGET  = Concentration
@@ -607,7 +606,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt/5.8/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Concentration/mainwindow.h ../Concentration/blocked.h ../Concentration/global.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Concentration/mainwindow.h ../Concentration/blocked.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../Concentration/main.cpp ../Concentration/mainwindow.cpp ../Concentration/blocked.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Concentration/mainwindow.ui ../Concentration/blocked.ui $(DISTDIR)/
 
@@ -1304,6 +1303,8 @@ blocked.o: ../Concentration/blocked.cpp ../Concentration/blocked.h \
 		/opt/Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt/5.8/gcc_64/include/QtWidgets/QLabel \
+		/opt/Qt/5.8/gcc_64/include/QtWidgets/qlabel.h \
 		/opt/Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
 		/opt/Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
 		/opt/Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
