@@ -5,10 +5,10 @@
 #include <fstream>
 #include "blocked.h"
 #include <QSettings>
+#include <QCoreApplication>
+#include <QtCore>
 
 QSettings settings;
-QList webs = [];
-settings.setValue("blockedwebsites",webs);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -31,7 +31,7 @@ void MainWindow::on_additem_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     QListWidgetItem *itm = ui->listWidget->currentItem();
-    itm->setHidden(1);
+   itm->setHidden(1);
 }
 
 void MainWindow::on_BlockedWindow_clicked()

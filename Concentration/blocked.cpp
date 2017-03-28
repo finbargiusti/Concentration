@@ -1,20 +1,28 @@
 #include "blocked.h"
 #include "ui_blocked.h"
+#include <iostream>
 #include <QSettings>
+#include <QVariant>
+#include <typeinfo>
 
-QList<QString> Websites = settings.value("blockedwebsites").value<QList>();
+Q_DECLARE_METATYPE(QList<QString>)
+
+
+QSettings concsettings;
+QList<QString> output;
 
 Blocked::Blocked(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Blocked)
 {
     ui->setupUi(this);
-    int i;
-    for (i < Websites.size();i++;){
-        ui->listWidget->addItem(Websites[i]);
+    if(concsettings.value("SitesV").toBool() == true){
+        output = concsettings.value("Sites").value<QList<QString>>();
+    }
+    for(QString i : output){
+        ui->listWidget->addItem(i);
     }
 }
-
 
 Blocked::~Blocked()
 {
@@ -23,7 +31,10 @@ Blocked::~Blocked()
 
 void Blocked::on_pushButton_clicked()
 {
+    qRegisterMetaTypeStreamOperators<QList<QString>>("<QList<QString>>");
     QString item = ui->lineEdit->text();
-    Websites.push_back(item);
     ui->listWidget->addItem(item);
+    output.append(item);
+    concsettings.setValue("Sites",QVariant::fromValue(output));
+    concsettings.setValue("SitesV",true);
 }
