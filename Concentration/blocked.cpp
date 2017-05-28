@@ -4,23 +4,32 @@
 #include <QSettings>
 #include <QVariant>
 #include <typeinfo>
+#include <QDebug>
+#include <QDir>
+#include <list>
+#include "unistd.h"
 
 Q_DECLARE_METATYPE(QList<QString>)
 
 
 QSettings concsettings;
-QList<QString> output;
+QStringList output;
+QString outputstr;
 
 Blocked::Blocked(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Blocked)
 {
     ui->setupUi(this);
-    if(concsettings.value("SitesV").toBool() == true){
-        output = concsettings.value("Sites").value<QList<QString>>();
+    if(concsettings.value("SitesV").toBool()){
+        qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
+        outputstr = concsettings.value("Sites").value<QString>();
+        output = outputstr.split(",");
     }
     for(QString i : output){
-        ui->listWidget->addItem(i);
+        if(i != ""){
+            ui->listWidget->addItem(i);
+        }
     }
 }
 
@@ -31,10 +40,49 @@ Blocked::~Blocked()
 
 void Blocked::on_pushButton_clicked()
 {
-    qRegisterMetaTypeStreamOperators<QList<QString>>("<QList<QString>>");
-    QString item = ui->lineEdit->text();
-    ui->listWidget->addItem(item);
-    output.append(item);
-    concsettings.setValue("Sites",QVariant::fromValue(output));
+    if(ui->lineEdit->text() != ""){
+        QString ready;
+        qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
+        QString item = ui->lineEdit->text();
+        ui->listWidget->addItem(item);
+        output.clear();
+        for(int i = 0; i < ui->listWidget->count(); ++i)
+        {
+            QString item = ui->listWidget->item(i)->text();
+            output.append(item);
+        }
+        ready = "";
+        for(QString x: output){
+            ready += x + ",";
+        }
+        concsettings.setValue("Sites",ready);
+        concsettings.setValue("SitesV",true);
+        ui->lineEdit->setText("");
+        usleep(1000);
+    }
+}
+
+void Blocked::on_lineEdit_returnPressed()
+{
+    on_pushButton_clicked();
+}
+
+void Blocked::on_pushButton_2_clicked()
+{
+    QString ready;
+    delete ui->listWidget->currentItem();
+    output.clear();
+    for(int i = 0; i < ui->listWidget->count(); ++i)
+    {
+        QString item = ui->listWidget->item(i)->text();
+        output.append(item);
+    }
+    ready = "";
+    for(QString x: output){
+        ready += x + ",";
+    }
+    concsettings.setValue("Sites",ready);
     concsettings.setValue("SitesV",true);
+    ui->lineEdit->setText("");
+    usleep(1000);
 }

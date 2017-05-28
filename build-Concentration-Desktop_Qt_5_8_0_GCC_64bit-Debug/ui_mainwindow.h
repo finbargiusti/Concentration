@@ -18,9 +18,10 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -29,6 +30,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionContact_Finbar;
+    QAction *actionManual;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout;
@@ -37,14 +40,21 @@ public:
     QPushButton *BlockedWindow;
     QListWidget *listWidget;
     QPushButton *pushButton;
-    QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QMenuBar *menuBar;
+    QMenu *menuHelp;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(686, 423);
+        MainWindow->resize(745, 471);
+        MainWindow->setWindowOpacity(0.95);
+        MainWindow->setAnimated(true);
+        actionContact_Finbar = new QAction(MainWindow);
+        actionContact_Finbar->setObjectName(QStringLiteral("actionContact_Finbar"));
+        actionManual = new QAction(MainWindow);
+        actionManual->setObjectName(QStringLiteral("actionManual"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -83,12 +93,19 @@ public:
         verticalLayout->addWidget(pushButton);
 
         MainWindow->setCentralWidget(centralWidget);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        menuBar = new QMenuBar(MainWindow);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 745, 23));
+        menuHelp = new QMenu(menuBar);
+        menuHelp->setObjectName(QStringLiteral("menuHelp"));
+        MainWindow->setMenuBar(menuBar);
+
+        menuBar->addAction(menuHelp->menuAction());
+        menuHelp->addAction(actionContact_Finbar);
+        menuHelp->addAction(actionManual);
 
         retranslateUi(MainWindow);
 
@@ -98,9 +115,13 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Concentration!", Q_NULLPTR));
+        actionContact_Finbar->setText(QApplication::translate("MainWindow", "Contact Finbar", Q_NULLPTR));
+        actionManual->setText(QApplication::translate("MainWindow", "Manual", Q_NULLPTR));
+        lineEdit->setText(QString());
         additem->setText(QApplication::translate("MainWindow", "Add", Q_NULLPTR));
         BlockedWindow->setText(QApplication::translate("MainWindow", "Blocked Sites", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "Done task", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -14,10 +14,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
@@ -32,15 +30,14 @@ public:
     QGridLayout *gridLayout;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QListWidget *listWidget;
-    QDialogButtonBox *buttonBox;
-    QLabel *label;
 
     void setupUi(QDialog *Blocked)
     {
         if (Blocked->objectName().isEmpty())
             Blocked->setObjectName(QStringLiteral("Blocked"));
-        Blocked->resize(400, 300);
+        Blocked->resize(553, 408);
         verticalLayout = new QVBoxLayout(Blocked);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         gridLayout = new QGridLayout();
@@ -53,7 +50,12 @@ public:
         pushButton = new QPushButton(Blocked);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
-        gridLayout->addWidget(pushButton, 0, 1, 1, 1);
+        gridLayout->addWidget(pushButton, 0, 2, 1, 1);
+
+        pushButton_2 = new QPushButton(Blocked);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        gridLayout->addWidget(pushButton_2, 0, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
@@ -63,22 +65,8 @@ public:
 
         verticalLayout->addWidget(listWidget);
 
-        buttonBox = new QDialogButtonBox(Blocked);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-
-        verticalLayout->addWidget(buttonBox);
-
-        label = new QLabel(Blocked);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
 
         retranslateUi(Blocked);
-        QObject::connect(buttonBox, SIGNAL(accepted()), Blocked, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), Blocked, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(Blocked);
     } // setupUi
@@ -87,7 +75,7 @@ public:
     {
         Blocked->setWindowTitle(QApplication::translate("Blocked", "Dialog", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Blocked", "Add site", Q_NULLPTR));
-        label->setText(QApplication::translate("Blocked", "TextLabel", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("Blocked", "Delete item", Q_NULLPTR));
     } // retranslateUi
 
 };

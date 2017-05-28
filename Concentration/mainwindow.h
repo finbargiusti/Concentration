@@ -23,6 +23,14 @@ private slots:
 
     void on_BlockedWindow_clicked();
 
+    void on_actionContact_Finbar_triggered();
+
+    void on_actionManual_triggered();
+
+    void injectGenerator();
+
+    void mainLoop();
+
 private:
     Ui::MainWindow *ui;
 };
