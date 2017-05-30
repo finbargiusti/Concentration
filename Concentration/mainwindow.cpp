@@ -18,7 +18,6 @@ using namespace std;
 HostsFile Hsts;
 QList<QString> noutput;
 QSettings settings;
-vector<string> injectlist ;
 QList<QString> rnoutput;
 QString nready;
 bool active;
@@ -49,7 +48,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(mainLoop()));
     timer->start(1);
 }
-void MainWindow::injectGenerator(){
+vector<string> MainWindow::injectGenerator(){
+    vector<string> injectlist;
     QString rnoutputstr;
     qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
     rnoutputstr = settings.value("Sites").value<QString>();
@@ -59,14 +59,14 @@ void MainWindow::injectGenerator(){
             injectlist.push_back("127.0.0.1	" + i.toStdString());
         }
     }
+    return injectlist;
 }
 
 void MainWindow::mainLoop(){
     if (ui->listWidget->count() == 0) {
 
         if(active == true){
-            injectGenerator();
-            for (string item : injectlist) {
+            for (string item : injectGenerator()) {
                 Hsts.cancel(item);
             }
             Hsts.sync();
@@ -75,7 +75,7 @@ void MainWindow::mainLoop(){
     } else {
         if (active == false) {
             injectGenerator();
-            for(string item : injectlist) {
+            for(string item : injectGenerator()) {
                 Hsts.add(item);
             }
             Hsts.sync();

@@ -209,7 +209,6 @@ DIST          = ../../../Qt/5.8/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
-		../Concentration/.qmake.stash \
 		../../../Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -396,7 +395,6 @@ Makefile: ../Concentration/Concentration.pro ../../../Qt/5.8/gcc_64/mkspecs/linu
 		../../../Qt/5.8/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.8/gcc_64/mkspecs/features/default_pre.prf \
@@ -571,7 +569,6 @@ Makefile: ../Concentration/Concentration.pro ../../../Qt/5.8/gcc_64/mkspecs/linu
 ../../../Qt/5.8/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.8/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.8/gcc_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../Qt/5.8/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.8/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.8/gcc_64/mkspecs/features/default_pre.prf:
@@ -754,7 +751,7 @@ moc_mainwindow.cpp: ../../../Qt/5.8/gcc_64/include/QtWidgets/QMainWindow \
 		../Concentration/mainwindow.h \
 		moc_predefs.h \
 		../../../Qt/5.8/gcc_64/bin/moc
-	/home/finbar/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/finbar/Qt/5.8/gcc_64/mkspecs/linux-g++ -I/home/finbar/Projects/Concentration/Concentration -I/home/finbar/Qt/5.8/gcc_64/include -I/home/finbar/Qt/5.8/gcc_64/include/QtWidgets -I/home/finbar/Qt/5.8/gcc_64/include/QtGui -I/home/finbar/Qt/5.8/gcc_64/include/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Concentration/mainwindow.h -o moc_mainwindow.cpp
+	/home/finbar/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/finbar/Qt/5.8/gcc_64/mkspecs/linux-g++ -I/home/finbar/Projects/Concentration/Concentration -I/home/finbar/Qt/5.8/gcc_64/include -I/home/finbar/Qt/5.8/gcc_64/include/QtWidgets -I/home/finbar/Qt/5.8/gcc_64/include/QtGui -I/home/finbar/Qt/5.8/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Concentration/mainwindow.h -o moc_mainwindow.cpp
 
 moc_blocked.cpp: ../../../Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
@@ -858,10 +855,12 @@ moc_blocked.cpp: ../../../Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/QSettings \
+		../../../Qt/5.8/gcc_64/include/QtCore/qsettings.h \
 		../Concentration/blocked.h \
 		moc_predefs.h \
 		../../../Qt/5.8/gcc_64/bin/moc
-	/home/finbar/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/finbar/Qt/5.8/gcc_64/mkspecs/linux-g++ -I/home/finbar/Projects/Concentration/Concentration -I/home/finbar/Qt/5.8/gcc_64/include -I/home/finbar/Qt/5.8/gcc_64/include/QtWidgets -I/home/finbar/Qt/5.8/gcc_64/include/QtGui -I/home/finbar/Qt/5.8/gcc_64/include/QtCore -I. -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Concentration/blocked.h -o moc_blocked.cpp
+	/home/finbar/Qt/5.8/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/finbar/Qt/5.8/gcc_64/mkspecs/linux-g++ -I/home/finbar/Projects/Concentration/Concentration -I/home/finbar/Qt/5.8/gcc_64/include -I/home/finbar/Qt/5.8/gcc_64/include/QtWidgets -I/home/finbar/Qt/5.8/gcc_64/include/QtGui -I/home/finbar/Qt/5.8/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Concentration/blocked.h -o moc_blocked.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -992,66 +991,14 @@ main.o: ../Concentration/main.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.8/gcc_64/include/QtGui/qicon.h \
 		ui_mainwindow.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/QVariant \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QAction \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QApplication \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/QCoreApplication \
 		../../../Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QGridLayout \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qpen.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QListWidget \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QMenu \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qmenu.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QMenuBar \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QStatusBar \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QWidget \
-		../../../Qt/5.8/gcc_64/include/QtCore/QCoreApplication \
 		../../../Qt/5.8/gcc_64/include/QtCore/QtCore \
 		../../../Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
@@ -1093,6 +1040,7 @@ main.o: ../Concentration/main.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
@@ -1120,6 +1068,7 @@ main.o: ../Concentration/main.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qqueue.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qresource.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
@@ -1154,7 +1103,12 @@ main.o: ../Concentration/main.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qwaitcondition.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qwineventnotifier.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qxmlstream.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h
+		../../../Qt/5.8/gcc_64/include/QtCore/qtcoreversion.h \
+		../../../Qt/5.8/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.8/gcc_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Concentration/main.cpp
 
 mainwindow.o: ../Concentration/mainwindow.cpp ../Concentration/mainwindow.h \
@@ -1269,71 +1223,19 @@ mainwindow.o: ../Concentration/mainwindow.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.8/gcc_64/include/QtWidgets/qdialog.h \
 		ui_mainwindow.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/QVariant \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QAction \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QApplication \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QGridLayout \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qpen.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QListWidget \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QMenu \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qmenu.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QMenuBar \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QStatusBar \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstatusbar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QWidget \
 		../Concentration/hostsfile.h \
 		../Concentration/blocked.h \
 		../../../Qt/5.8/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.8/gcc_64/include/QtCore/QSettings \
 		../../../Qt/5.8/gcc_64/include/QtCore/qsettings.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/QCoreApplication \
+		../../../Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/QtCore \
 		../../../Qt/5.8/gcc_64/include/QtCore/QtCoreDepends \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractanimation.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractproxymodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qabstractstate.h \
@@ -1375,6 +1277,7 @@ mainwindow.o: ../Concentration/mainwindow.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qhistorystate.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qidentityproxymodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsonarray.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsonvalue.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qjsondocument.h \
@@ -1402,6 +1305,7 @@ mainwindow.o: ../Concentration/mainwindow.cpp ../Concentration/mainwindow.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qvariantanimation.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qqueue.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qreadwritelock.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qresource.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qsavefile.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qscopedvaluerollback.h \
@@ -1541,59 +1445,10 @@ blocked.o: ../Concentration/blocked.cpp ../Concentration/blocked.h \
 		../../../Qt/5.8/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.8/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.8/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_blocked.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/QVariant \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QAction \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qaction.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qicon.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QApplication \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qcoreapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qeventloop.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qinputmethod.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QButtonGroup \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QGridLayout \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QHeaderView \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qheaderview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qvalidator.h \
-		../../../Qt/5.8/gcc_64/include/QtCore/qregularexpression.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qstyle.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qtabbar.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qrubberband.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QLineEdit \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlineedit.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextcursor.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextformat.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qpen.h \
-		../../../Qt/5.8/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QListWidget \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistwidget.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qlistview.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../../Qt/5.8/gcc_64/include/QtWidgets/QVBoxLayout \
 		../../../Qt/5.8/gcc_64/include/QtCore/QSettings \
 		../../../Qt/5.8/gcc_64/include/QtCore/qsettings.h \
+		ui_blocked.h \
+		../../../Qt/5.8/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.8/gcc_64/include/QtCore/QDebug \
 		../../../Qt/5.8/gcc_64/include/QtCore/QDir \
 		../../../Qt/5.8/gcc_64/include/QtCore/qdir.h \

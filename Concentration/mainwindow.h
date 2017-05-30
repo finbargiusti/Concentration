@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <string>
+#include <vector>
 #include <QMainWindow>
 
 namespace Ui {
@@ -27,7 +29,7 @@ private slots:
 
     void on_actionManual_triggered();
 
-    void injectGenerator();
+    std::vector<std::string> injectGenerator();
 
     void mainLoop();
 

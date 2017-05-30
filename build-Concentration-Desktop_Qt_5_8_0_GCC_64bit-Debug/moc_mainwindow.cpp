@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[9];
-    char stringdata0[163];
+    QByteArrayData data[10];
+    char stringdata0[188];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,14 +39,15 @@ QT_MOC_LITERAL(4, 53, 24), // "on_BlockedWindow_clicked"
 QT_MOC_LITERAL(5, 78, 33), // "on_actionContact_Finbar_trigg..."
 QT_MOC_LITERAL(6, 112, 25), // "on_actionManual_triggered"
 QT_MOC_LITERAL(7, 138, 15), // "injectGenerator"
-QT_MOC_LITERAL(8, 154, 8) // "mainLoop"
+QT_MOC_LITERAL(8, 154, 24), // "std::vector<std::string>"
+QT_MOC_LITERAL(9, 179, 8) // "mainLoop"
 
     },
     "MainWindow\0on_additem_clicked\0\0"
     "on_pushButton_clicked\0on_BlockedWindow_clicked\0"
     "on_actionContact_Finbar_triggered\0"
     "on_actionManual_triggered\0injectGenerator\0"
-    "mainLoop"
+    "std::vector<std::string>\0mainLoop"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,7 +71,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,    0,   52,    2, 0x08 /* Private */,
        6,    0,   53,    2, 0x08 /* Private */,
        7,    0,   54,    2, 0x08 /* Private */,
-       8,    0,   55,    2, 0x08 /* Private */,
+       9,    0,   55,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -78,7 +79,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    0x80000000 | 8,
     QMetaType::Void,
 
        0        // eod
@@ -95,12 +96,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_BlockedWindow_clicked(); break;
         case 3: _t->on_actionContact_Finbar_triggered(); break;
         case 4: _t->on_actionManual_triggered(); break;
-        case 5: _t->injectGenerator(); break;
+        case 5: { std::vector<std::string> _r = _t->injectGenerator();
+            if (_a[0]) *reinterpret_cast< std::vector<std::string>*>(_a[0]) = _r; }  break;
         case 6: _t->mainLoop(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject MainWindow::staticMetaObject = {
