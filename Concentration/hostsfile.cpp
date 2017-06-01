@@ -9,7 +9,7 @@
 HostsFile::HostsFile()
 {
     string line;
-    ifstream file("/etc/hosts");
+    ifstream file(path.c_str());
     while (getline(file, line)){
         lines.insert(line);
     }
@@ -38,10 +38,12 @@ bool HostsFile::check(string host)
 
 void HostsFile::sync(){
     string hoststr;
-    ofstream file;
-    file.open("/etc/hosts");
-    for (string line : lines) {
-        hoststr += (line + "\n");
+    ofstream file(path.c_str());
+    for (int i = 0; i < lines.size(); ++i) {
+        set<string>::iterator it = lines.begin();
+        advance(it, i);
+        string dunce = *it;
+        hoststr += (dunce + "\n");
     }
     file << hoststr;
 }

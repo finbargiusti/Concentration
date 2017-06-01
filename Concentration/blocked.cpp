@@ -22,13 +22,12 @@ Blocked::Blocked(QWidget *parent) :
 {
     ui->setupUi(this);
     if(concsettings.value("SitesV").toBool()){
-        qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
         outputstr = concsettings.value("Sites").value<QString>();
         output = outputstr.split(",");
     }
-    for(QString i : output){
-        if(i != ""){
-            ui->listWidget->addItem(i);
+    for(int i=0; i < output.size();++i){
+        if(output[i] != ""){
+            ui->listWidget->addItem(output[i]);
         }
     }
 }
@@ -42,7 +41,6 @@ void Blocked::on_pushButton_clicked()
 {
     if(ui->lineEdit->text() != ""){
         QString ready;
-        qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
         QString item = ui->lineEdit->text();
         ui->listWidget->addItem(item);
         output.clear();
@@ -52,8 +50,8 @@ void Blocked::on_pushButton_clicked()
             output.append(item);
         }
         ready = "";
-        for(QString x: output){
-            ready += x + ",";
+        for(int i=0; i < output.size(); ++i){
+            ready += output.size() + ",";
         }
         concsettings.setValue("Sites",ready);
         concsettings.setValue("SitesV",true);
@@ -78,8 +76,8 @@ void Blocked::on_pushButton_2_clicked()
         output.append(item);
     }
     ready = "";
-    for(QString x: output){
-        ready += x + ",";
+    for(int i=0; i < output.size(); ++i){
+        ready += output.size() + ",";
     }
     concsettings.setValue("Sites",ready);
     concsettings.setValue("SitesV",true);

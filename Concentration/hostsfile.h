@@ -7,6 +7,7 @@ using namespace std;
 
 class HostsFile
 {
+    std::string path = "c:/Windows/System32/Drivers/etc/Hosts";
     set<string> lines;
 public:
     HostsFile();

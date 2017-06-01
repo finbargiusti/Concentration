@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     if(settings.value("TasksV").toBool()){
         QString noutputstr;
-        qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
         noutputstr = settings.value("Tasks").value<QString>();
         noutput = noutputstr.split(",");
     }
@@ -51,12 +50,11 @@ MainWindow::MainWindow(QWidget *parent) :
 vector<string> MainWindow::injectGenerator(){
     vector<string> injectlist;
     QString rnoutputstr;
-    qRegisterMetaTypeStreamOperators<QList<QString>>("QList<QString>");
     rnoutputstr = settings.value("Sites").value<QString>();
     rnoutput = rnoutputstr.split(",");
-    for(QString i : rnoutput){
-        if(i != ""){
-            injectlist.push_back("127.0.0.1	" + i.toStdString());
+    for(int i = 0; i < rnoutput.size(); ++i){
+        if(rnoutput[i] != ""){
+            injectlist.push_back("127.0.0.1	" + rnoutput[i].toStdString());
         }
     }
     return injectlist;
@@ -66,17 +64,16 @@ void MainWindow::mainLoop(){
     if (ui->listWidget->count() == 0) {
 
         if(active == true){
-            for (string item : injectGenerator()) {
-                Hsts.cancel(item);
+            for (int i=0; i < injectGenerator().size();++i) {
+                Hsts.cancel(injectGenerator()[i]);
             }
             Hsts.sync();
         }
         active = false;
     } else {
         if (active == false) {
-            injectGenerator();
-            for(string item : injectGenerator()) {
-                Hsts.add(item);
+            for(int i=0; i < injectGenerator().size();++i) {
+                Hsts.add(injectGenerator()[i]);
             }
             Hsts.sync();
         }
@@ -101,8 +98,8 @@ void MainWindow::on_additem_clicked()
             QString item = ui->listWidget->item(i)->text();
             noutput.append(item);
         }
-        for (QString x: noutput){
-            nready += x + ",";
+        for (int i=0;i< noutput.size();++i){
+            nready += noutput[i] + ",";
         }
         settings.setValue("Tasks",nready);
         settings.setValue("TasksV",true);
@@ -123,8 +120,8 @@ void MainWindow::on_pushButton_clicked()
         temp.append(item);
     }
     noutput = temp;
-    for(QString x: noutput){
-        tempnready += x + ",";
+    for(int i=0;i < noutput.size();++i){
+        tempnready += noutput[i] + ",";
     }
     nready = tempnready;
     settings.setValue("Tasks",nready);
