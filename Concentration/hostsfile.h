@@ -7,8 +7,13 @@ using namespace std;
 
 class HostsFile
 {
-    std::string path = "c:/Windows/System32/Drivers/etc/Hosts";
+    #ifdef Q_OS_WIN32
+        std::string path = "c:/Windows/System32/Drivers/etc/Hosts";
+    #elif defined(Q_OS_UNIX)
+        std::string path = "/etc/hosts";
+    #endif
     set<string> lines;
+
 public:
     HostsFile();
     bool check(string);
