@@ -17,7 +17,11 @@ using namespace std;
 
 HostsFile Hsts;
 QList<QString> noutput;
+#if (defined (_WIN32) || defined (_WIN64))
+QSettings concsettings(QDir::currentPath() + "/config.ini", QSettings::IniFormat);
+#else
 QSettings settings;
+#endif
 QList<QString> rnoutput;
 QString nready;
 bool active;
@@ -64,7 +68,7 @@ void MainWindow::mainLoop(){
     if (ui->listWidget->count() == 0) {
 
         if(active == true){
-            for (int i=0; i < injectGenerator().size();++i) {
+            for (size_t i=0; i < injectGenerator().size();++i) {
                 Hsts.cancel(injectGenerator()[i]);
             }
             Hsts.sync();
@@ -72,7 +76,7 @@ void MainWindow::mainLoop(){
         active = false;
     } else {
         if (active == false) {
-            for(int i=0; i < injectGenerator().size();++i) {
+            for(size_t i=0; i < injectGenerator().size();++i) {
                 Hsts.add(injectGenerator()[i]);
             }
             Hsts.sync();

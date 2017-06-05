@@ -12,7 +12,11 @@
 Q_DECLARE_METATYPE(QList<QString>)
 
 
-QSettings concsettings;
+#if (defined (_WIN32) || defined (_WIN64))
+    QSettings concsettings(QDir::currentPath() + "/config.ini", QSettings::IniFormat);
+#else
+    QSettings concsettings;
+#endif
 QStringList output;
 QString outputstr;
 
@@ -25,7 +29,7 @@ Blocked::Blocked(QWidget *parent) :
         outputstr = concsettings.value("Sites").value<QString>();
         output = outputstr.split(",");
     }
-    for(int i=0; i < output.size();++i){
+    for(size_t i=0; i < output.size();++i){
         if(output[i] != ""){
             ui->listWidget->addItem(output[i]);
         }
@@ -50,7 +54,7 @@ void Blocked::on_pushButton_clicked()
             output.append(item);
         }
         ready = "";
-        for(int i=0; i < output.size(); ++i){
+        for(size_t i=0; i < output.size(); ++i){
             ready += output.size() + ",";
         }
         concsettings.setValue("Sites",ready);
@@ -76,7 +80,7 @@ void Blocked::on_pushButton_2_clicked()
         output.append(item);
     }
     ready = "";
-    for(int i=0; i < output.size(); ++i){
+    for(size_t i=0; i < output.size(); ++i){
         ready += output.size() + ",";
     }
     concsettings.setValue("Sites",ready);

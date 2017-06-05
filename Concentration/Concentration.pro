@@ -34,4 +34,3 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     blocked.ui
-CONFIG += static
