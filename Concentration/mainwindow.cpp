@@ -161,3 +161,8 @@ void MainWindow::on_actionManual_triggered()
     QDesktopServices::openUrl(QUrl("http://www.github.com/finbargiusti/Concentration/wiki"));
 
 }
+
+void MainWindow::on_lineEdit_returnPressed()
+{
+    MainWindow::on_additem_clicked();
+}

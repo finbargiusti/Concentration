@@ -33,6 +33,8 @@ private slots:
 
     void mainLoop();
 
+    void on_lineEdit_returnPressed();
+
 private:
     Ui::MainWindow *ui;
 };
