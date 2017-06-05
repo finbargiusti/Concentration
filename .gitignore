@@ -2,3 +2,4 @@ build-Concentration*/
 deployment/
 deployment/*
 Concentration/Makefile
+Concentration/Concentration.pro.*

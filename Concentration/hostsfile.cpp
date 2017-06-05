@@ -39,11 +39,8 @@ bool HostsFile::check(string host)
 void HostsFile::sync(){
     string hoststr;
     ofstream file(path.c_str());
-    for (size_t i = 0; i < lines.size(); ++i) {
-        set<string>::iterator it = lines.begin();
-        advance(it, i);
+    for (set<string>::iterator it = lines.begin(); it != lines.end(); it++){
         string dunce = *it;
-        cout << dunce;
         hoststr += (dunce + "\n");
     }
     file << hoststr;
