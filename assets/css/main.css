@@ -30,7 +30,8 @@
 body {
     overflow:hidden;
     background: url("images/bg.jpg") no-repeat center center fixed;
-    background-size: 100%; 
+    background-size: cover;
+    min-height:100%;
 }
 center {
     padding:30px;
@@ -58,19 +59,19 @@ center {
     width:100%;
 }
 .link {
-    border: 0.3vw #FFF solid;
+    border: 3px #FFF solid;
     display: inline-block;
-    height:8vw; 
-    width: 8vw;
-    border-radius: 8vw;
+    height:80px; 
+    width: 80px;
+    border-radius: 80px;
     transition: all 0.2s ease-out;
 }
 .link:hover {
-    border: 0.3vw #FFF solid;
+    border: 3px #FFF solid;
     display: inline-block;
-    height:10vw; 
-    width: 10vw;
-    border-radius: 10vw;
+    height:100px; 
+    width: 100px;
+    border-radius: 100px;
     background: rgba(255,255,255,0.6);
     transition: all 0.2s ease-in;
 }
@@ -80,12 +81,12 @@ center {
     vertical-align: middle;
 }
 .link img {
-    max-height:5vw;
+    max-height:50px;
     vertical-align: middle;
     transition: all 0.2s ease-out;
 }
 .link:hover img {
-    max-height:6.25vw;
+    max-height:62.5px;
     vertical-align: middle;
     transition: all 0.2s ease-in;
 }
