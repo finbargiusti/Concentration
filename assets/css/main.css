@@ -63,6 +63,25 @@ center {
     .desc {
         font-size:2em;
     }
+/*    .link {
+        border: 6px #FFF solid;
+        height:160px; 
+        width: 160px;
+        border-radius: 160px;
+    }
+    .link:hover {
+        border: 6px #FFF solid;
+        display: inline-block;
+        height:200px; 
+        width: 200px;
+        border-radius: 200px;
+    }
+    .link img {
+        max-height:100px;
+    }
+    .link:hover img {
+        max-height:125px;
+    }*/
 }
 #links {
     opacity:0;
