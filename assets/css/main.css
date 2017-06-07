@@ -29,9 +29,8 @@
 }
 body {
     overflow:hidden;
-    min-height:100%;
     background: url("images/bg.jpg") no-repeat center center fixed;
-    background-size: cover; 
+    background-size: 100%; 
 }
 center {
     padding:30px;
