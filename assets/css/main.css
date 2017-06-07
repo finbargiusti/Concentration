@@ -1,6 +1,6 @@
 @font-face {
-    font-family: robotoLight;
-    src: url(../fonts/roboto-light.ttf);
+    font-family: robotoBold;
+    src: url(../fonts/roboto-bold.ttf);
 }
 @font-face {
     font-family: robotoThin;
@@ -10,15 +10,16 @@
     0% {top:100%}
     100%{top:10%}
 }
+@keyframes gototop2 {
+    0% {top:100%}
+    100%{top:25%}
+}
 @keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
 }
-@keyframes bgscroll {
-    0% {background:white;}
-    100% {background:#16a085 url("../images/bg.jpg") bottom left;}
-}
 #bar {
+	text-align:center;
     position:absolute;
     top:10%;
     left:0;
@@ -28,26 +29,39 @@
     animation-duration: 3s;
 }
 body {
+    height:100vh;
+	background: url(images/bg.jpg) no-repeat center center fixed;
     overflow:hidden;
-    background: url("images/bg.jpg") no-repeat center center fixed;
     background-size: cover;
-    min-height:100%;
 }
 center {
     padding:30px;
 }
 .main-title {
     margin: 10px 0 10px;
-    font-family: robotoLight;
-    color:black;
+    font-family: robotoBold;
     font-size:5vw;
+	background: url(images/bg.jpg);
+    background-position:20% 30%;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	color:red;	
 }
 .desc {
+    font-size: 1em;
     font-family: robotoThin; 
 }
 @media screen and (min-width:2000px) {
     .main-title {
         font-size:100px; 
+    }
+}
+@media screen and (max-device-width:25cm) {
+    .main-title {
+        font-size:10vw; 
+    }
+    .desc {
+        font-size:2em;
     }
 }
 #links {
@@ -90,4 +104,3 @@ center {
     vertical-align: middle;
     transition: all 0.2s ease-in;
 }
-
