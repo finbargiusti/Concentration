@@ -4,10 +4,16 @@
 		<title>Concentration</title>
 		<meta charset="utf-8" />
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 		<link rel="stylesheet" href="assets/css/main.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	</head>
 	<body>
+        <script>
+        $(document).ready(function(){
+            $("#bar").animate({top: "10%"}, 3000);
+        });
+        </script>
 		<center>
 				<div id="bar">
 					<h1 class="main-title fade-in">CONCENTRATION</h1>
@@ -21,14 +27,6 @@
             <a href="http://finbargiusti.github.io/Concentration"><div class="link"><span class="helper" ></span><img src="assets/css/images/download.svg" /></div></a>
         </div>
         </center>
-        <script>
-        $(document).ready(function(){
-            while (true) {
-                alert("hi");
-                $(".main-title").css({"background": "url(images/bg.jpg)", "no-repeat", "center", "center", "fixed"});
-            }
-        });
-        <script>
 	</body>
 </html>
 
