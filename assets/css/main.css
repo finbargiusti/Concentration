@@ -64,7 +64,7 @@ center {
     height:8vw; 
     width: 8vw;
     border-radius: 8vw;
-    transition: all 1s ease-out;
+    transition: all 0.2s ease-out;
 }
 .link:hover {
     border: 0.3vw #FFF solid;
@@ -83,7 +83,7 @@ center {
 .link img {
     max-height:5vw;
     vertical-align: middle;
-    transition: all 1s ease-out;
+    transition: all 0.2s ease-out;
 }
 .link:hover img {
     max-height:6.25vw;
