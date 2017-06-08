@@ -1,0 +1,62 @@
+@keyframes titletotop {
+    0% {top:30vh;font-size:3vw;}
+    100% {top:5vh;font-size:2vw;}
+}
+@keyframes textotop {
+    0% {top:100vh;opacity:0;}
+    100% {top:25vh;opacity:1;}
+}
+@keyframes underline {
+    0% {width: 0px margin-left: 0px;}
+    100% {width:240px;margin-left:-120px;}
+}
+@font-face {
+    font-family: courgette;
+    src: url(../fonts/courgette.ttf);
+}
+@font-face {
+    font-family: robotoBold;
+    src: url(../fonts/roboto-bold.ttf);
+}
+@font-face {
+    font-family: robotoThin;
+    src: url(../fonts/roboto-thin.ttf);
+}
+body {
+    overflow-x: hidden;
+    background-color:#C5EFF7;
+}
+.title {
+    text-align:center;
+    font-family: courgette;
+}
+#holder {
+    width:100vw;
+    top:30vh;
+    position:absolute; 
+    font-size:3vw;
+    animation: titletotop 3s ease 1s forwards;
+}
+#holder:after {
+    position:absolute;
+    top:80%;
+    left:50%;
+    width: 0px;
+    height:4px;
+    margin-left: 0;
+    content: '';
+    background-color: black;
+    animation: underline 4s ease-out 4s forwards;
+}
+#data {
+    font-family:robotoThin;
+    position:absolute;
+    left:10px; 
+    right:10px;
+    top:100vh;
+    opacity:0;
+    animation: textotop 3s ease 1s forwards;
+}
+#data b {
+    font-family:robotoBold;
+}
