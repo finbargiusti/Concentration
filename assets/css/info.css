@@ -55,9 +55,8 @@ body {
 }
 #data { 
     padding:15px;
-    position:absolute;
-    left:20vw; 
-    right:20vw;
+    max-width:600px;
+    margin:auto;
     opacity:0;
     animation: textotop 1s ease 1s forwards;
 }
