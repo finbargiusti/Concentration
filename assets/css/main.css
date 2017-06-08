@@ -6,6 +6,10 @@
     font-family: robotoThin;
     src: url(../fonts/roboto-thin.ttf);
 }
+@font-face {
+    font-family: robotoLight;
+    src: url(../fonts/roboto-light.ttf);
+}
 @keyframes gototop {
     0% {top:100%}
     100%{top:10%;}
@@ -44,7 +48,7 @@ center {
 .main-title {
     margin: 10px 0 10px;
     font-family: robotoBold;
-    font-size:5vw;
+    font-size:2cm;
     /* Transparent styling */
 	/*background: url(images/bg.jpg) no-repeat center center fixed;
     background-size:cover;
@@ -53,7 +57,7 @@ center {
 	color:black;	
 }
 .desc {
-    font-size: 1em;
+    font-size: 0.5cm;
     font-family: robotoThin; 
 }
 #links {
@@ -67,17 +71,17 @@ center {
 .link {
     border: 3px #FFF solid;
     display: inline-block;
-    height:80px; 
-    width: 80px;
-    border-radius: 80px;
+    height:3cm; 
+    width: 3cm;
+    border-radius: 3cm;
     transition: all 0.2s ease-out;
 }
 .link:hover {
     border: 3px #FFF solid;
     display: inline-block;
-    height:100px; 
-    width: 100px;
-    border-radius: 100px;
+    height:4cm; 
+    width: 4cm;
+    border-radius: 4cm;
     background: rgba(255,255,255,0.6);
     transition: all 0.2s ease-in;
 }
@@ -87,20 +91,16 @@ center {
     vertical-align: middle;
 }
 .link img {
-    max-height:50px;
+    max-height:2cm;
     vertical-align: middle;
     transition: all 0.2s ease-out;
 }
 .link:hover img {
-    max-height:62.5px;
+    max-height:2.67cm;
     vertical-align: middle;
     transition: all 0.2s ease-in;
 }
-@media screen and (min-width:2000px) {
-    .main-title {
-        font-size:100px; 
-    }
-}
+
 @media screen and (max-device-width:9cm) {
     .main-title {
         font-size:10vw; 
@@ -108,28 +108,17 @@ center {
     .desc {
         font-size:3em;
     }
-    .link {
-        border: 6px #FFF solid;
-        height:160px; 
-        width: 160px;
-        border-radius: 160px;
-    }
-    .link:hover {
-        border: 6px #FFF solid;
-        display: inline-block;
-        height:200px; 
-        width: 200px;
-        border-radius: 200px;
-    }
-    .link img {
-        max-height:100px;
-    }
-    .link:hover img {
-        max-height:125px;
-    }
 }
 @media screen and (max-device-height:9cm) {
     #links {
         top:80%;
     }
+}
+#footer {
+    font-family: robotoLight;
+    color:white;
+    position:absolute;
+    bottom:15px;
+    width:100vw;
+    text-align: center;
 }
