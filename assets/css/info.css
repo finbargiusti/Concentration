@@ -1,13 +1,13 @@
 @keyframes titletotop {
-    0% {top:30vh;font-size:3vw;}
-    100% {top:5vh;font-size:2vw;}
+    0% {margin-top:30vh;font-size:5vh;}
+    100% {margin-top:5vh;font-size:4vh;}
 }
 @keyframes textotop {
-    0% {top:100vh;opacity:0;}
-    100% {top:25vh;opacity:1;}
+    0% {margin-top:100vh;opacity:0;}
+    100% {margin-top:0;opacity:1;}
 }
 @keyframes underline {
-    0% {width: 0px margin-left: 0px;}
+    0% {width: 0px; margin-left: 0px;}
     100% {width:240px;margin-left:-120px;}
 }
 @font-face {
@@ -24,7 +24,7 @@
 }
 body {
     overflow-x: hidden;
-    background-color:#C5EFF7;
+    background-color:#E0E0E0;
 }
 .title {
     text-align:center;
@@ -32,30 +32,32 @@ body {
 }
 #holder {
     width:100vw;
-    top:30vh;
-    position:absolute; 
-    font-size:3vw;
-    animation: titletotop 3s ease 1s forwards;
+    position:relative;
+    display:inline-block;
+    margin-top:30vh;
+    font-size:5vh;
+    animation: titletotop 1s ease 1s forwards;
 }
 #holder:after {
     position:absolute;
-    top:80%;
-    left:50%;
+    display:inline-block;
+    bottom:3vh;
     width: 0px;
     height:4px;
-    margin-left: 0;
     content: '';
     background-color: black;
-    animation: underline 4s ease-out 4s forwards;
+    animation: underline 3s ease-out 2s forwards;
 }
 #data {
+    padding:15px;
+    text-align:justify;
+    font-size:1cm;
     font-family:robotoThin;
     position:absolute;
-    left:10px; 
-    right:10px;
-    top:100vh;
+    left:10vw; 
+    right:10vw;
     opacity:0;
-    animation: textotop 3s ease 1s forwards;
+    animation: textotop 1s ease 1s forwards;
 }
 #data b {
     font-family:robotoBold;
