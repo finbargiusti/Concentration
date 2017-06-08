@@ -48,7 +48,7 @@ center {
 .main-title {
     margin: 10px 0 10px;
     font-family: robotoBold;
-    font-size:2cm;
+    font-size:6vw;
     /* Transparent styling */
 	/*background: url(images/bg.jpg) no-repeat center center fixed;
     background-size:cover;
@@ -71,17 +71,17 @@ center {
 .link {
     border: 3px #FFF solid;
     display: inline-block;
-    height:3cm; 
-    width: 3cm;
-    border-radius: 3cm;
+    height:10vw; 
+    width: 10vw;
+    border-radius: 10vw;
     transition: all 0.2s ease-out;
 }
 .link:hover {
     border: 3px #FFF solid;
     display: inline-block;
-    height:4cm; 
-    width: 4cm;
-    border-radius: 4cm;
+    height:13vw; 
+    width: 13vw;
+    border-radius: 13vw;
     background: rgba(255,255,255,0.6);
     transition: all 0.2s ease-in;
 }
@@ -91,20 +91,17 @@ center {
     vertical-align: middle;
 }
 .link img {
-    max-height:2cm;
+    max-height:8vw;
     vertical-align: middle;
     transition: all 0.2s ease-out;
 }
 .link:hover img {
-    max-height:2.67cm;
+    max-height:10vw;
     vertical-align: middle;
     transition: all 0.2s ease-in;
 }
 
 @media screen and (max-device-width:9cm) {
-    .main-title {
-        font-size:10vw; 
-    }
     .desc {
         font-size:3em;
     }

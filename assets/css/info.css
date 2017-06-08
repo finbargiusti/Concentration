@@ -62,13 +62,13 @@ body {
     animation: textotop 1s ease 1s forwards;
 }
 #data p{
-    font-size:0.7cm;
+    font-size:0.5cm;
     line-height:1.4;
     font-family:roboto;
 }
 #data h2 {
     font-family:robotoBold;
-    font-size:0.9cm;
+    font-size:1cm;
     line-height:1.4;
 }
 .logo {
