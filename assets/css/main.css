@@ -101,16 +101,6 @@ center {
     transition: all 0.2s ease-in;
 }
 
-@media screen and (max-device-width:9cm) {
-    .desc {
-        font-size:3em;
-    }
-}
-@media screen and (max-device-height:9cm) {
-    #links {
-        top:80%;
-    }
-}
 #footer {
     font-family: robotoLight;
     color:white;
