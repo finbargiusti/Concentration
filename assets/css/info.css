@@ -1,5 +1,9 @@
+@keyframes simplefade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
 @keyframes titletotop {
-    0% {margin-top:30vh;font-size:5vh;}
+    0% {margin-top:30vh;font-size:8vh;}
     100% {margin-top:5vh;font-size:4vh;}
 }
 @keyframes textotop {
@@ -24,18 +28,18 @@
 }
 body {
     overflow-x: hidden;
-    background-color:#E0E0E0;
+    background-color:#FFF;
 }
 .title {
     text-align:center;
-    font-family: courgette;
+    font-family: robotoBold;
 }
 #holder {
     width:100vw;
     position:relative;
     display:inline-block;
     margin-top:30vh;
-    font-size:5vh;
+    font-size:8vh;
     animation: titletotop 1s ease 1s forwards;
 }
 #holder:after {
@@ -51,7 +55,7 @@ body {
 #data {
     padding:15px;
     text-align:justify;
-    font-size:1cm;
+    font-size:0.7cm;
     font-family:robotoThin;
     position:absolute;
     left:10vw; 
@@ -61,4 +65,13 @@ body {
 }
 #data b {
     font-family:robotoBold;
+    font-size:0.9cm;
+}
+.logo {
+    position:absolute;
+    width:5vw;
+    top:20px;
+    left:20px;
+    opacity :0
+    animation: simplefade 1s ease 1s forwards;
 }
