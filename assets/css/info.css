@@ -53,7 +53,7 @@ body {
     background-color: black;
     animation: underline 3s ease-out 2s forwards;
 }
-#data { 
+#data {
     padding:15px;
     max-width:600px;
     margin:auto;
