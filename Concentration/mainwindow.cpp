@@ -41,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->listWidget->addItem(i);
         }
     }
-    injectGenerator();
     if (ui->listWidget->count() == 0) {
         active = false;
     } else {
@@ -51,34 +50,18 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(mainLoop()));
     timer->start(1);
 }
-vector<string> MainWindow::injectGenerator(){
-    vector<string> injectlist;
-    QString rnoutputstr;
-    rnoutputstr = settings.value("Sites").value<QString>();
-    rnoutput = rnoutputstr.split(",");
-    for(int i = 0; i < rnoutput.size(); ++i){
-        if(rnoutput[i] != ""){
-            injectlist.push_back("127.0.0.1	" + rnoutput[i].toStdString());
-        }
-    }
-    return injectlist;
-}
 
 void MainWindow::mainLoop(){
     if (ui->listWidget->count() == 0) {
 
         if(active == true){
-            for (size_t i=0; i < injectGenerator().size();++i) {
-                Hsts.cancel(injectGenerator()[i]);
-            }
+            Hsts.add();
             Hsts.sync();
         }
         active = false;
     } else {
         if (active == false) {
-            for(size_t i=0; i < injectGenerator().size();++i) {
-                Hsts.add(injectGenerator()[i]);
-            }
+            Hsts.add();
             Hsts.sync();
         }
         active = true;

@@ -1,6 +1,7 @@
 #ifndef HOSTSFILE_H
 #define HOSTSFILE_H
 #include <set>
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -12,13 +13,14 @@ class HostsFile
     #else
         std::string path = "/etc/hosts";
     #endif
-    set<string> lines;
+    std::vector<std::string> lines;
 
 public:
     HostsFile();
     bool check(string);
-    void add(string);
-    void cancel(string);
+    void add();
+    std::vector<std::string> injectGenerator();
+    void cancel();
     void sync();
 };
 

@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     blocked.cpp \
-    hostsfile.cpp
+    hostsfile.cpp \
+    breaktime.cpp
 
 HEADERS  += mainwindow.h \
     blocked.h \
-    hostsfile.h
+    hostsfile.h \
+    breaktime.h
 
 FORMS    += mainwindow.ui \
     blocked.ui

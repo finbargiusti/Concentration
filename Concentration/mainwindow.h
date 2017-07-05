@@ -29,7 +29,6 @@ private slots:
 
     void on_actionManual_triggered();
 
-    std::vector<std::string> injectGenerator();
 
     void mainLoop();
 

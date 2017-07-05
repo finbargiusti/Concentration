@@ -1,47 +1,57 @@
 #include "hostsfile.h"
 #include <QCoreApplication>
 #include <QtCore>
+#include <QSettings>
 #include <iostream>
 #include <algorithm>
 #include <string>
 #include <fstream>
+
+QSettings sett;
 
 HostsFile::HostsFile()
 {
     string line;
     ifstream file(path.c_str());
     while (getline(file, line)){
-        lines.insert(line);
+        lines.push_back(line);
     }
 
 }
 
-void HostsFile::add(string host)
-{
-    lines.insert(host);
+vector<string> HostsFile::injectGenerator(){
+    vector<string> injectlist;
+    QStringList rnoutput;
+    rnoutput = sett.value("Sites").value<QString>().split(",");
+    for(int i = 0; i < rnoutput.size(); ++i){
+        if(rnoutput[i] != ""){
+            injectlist.push_back("127.0.0.1	" + rnoutput[i].toStdString());
+        }
+    }
+    return injectlist;
 }
 
-void HostsFile::cancel(string host)
+void HostsFile::add()
 {
-    cout << host;
-    lines.erase(host);
+    lines = injectGenerator();
+}
+
+void HostsFile::cancel()
+{
+    lines.clear();
 }
 
 bool HostsFile::check(string host)
 {
-    if (lines.count("127.0.0.1	" + host) == 1) {
-        return false;
-    } else {
-        return true;
-    }
+    return true;
 }
 
 void HostsFile::sync(){
     string hoststr;
     ofstream file(path.c_str());
-    for (set<string>::iterator it = lines.begin(); it != lines.end(); it++){
-        string dunce = *it;
-        hoststr += (dunce + "\n");
+    for (int i; i < lines.size(); ++i)
+    {
+        hoststr += (lines[i] + "\n");
     }
     file << hoststr;
 }
