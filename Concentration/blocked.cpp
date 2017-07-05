@@ -29,7 +29,7 @@ Blocked::Blocked(QWidget *parent) :
         outputstr = concsettings.value("Sites").value<QString>();
         output = outputstr.split(",");
     }
-    for(size_t i=0; i < output.size();++i){
+    for(int i=0; i < output.size();++i){
         if(output[i] != ""){
             ui->listWidget->addItem(output[i]);
         }
@@ -54,8 +54,8 @@ void Blocked::on_pushButton_clicked()
             output.append(item);
         }
         ready = "";
-        for(size_t i=0; i < output.size(); ++i){
-            ready += output.size() + ",";
+        for(int i=0; i < output.size(); ++i){
+            ready += output[i] + ",";
         }
         concsettings.setValue("Sites",ready);
         concsettings.setValue("SitesV",true);
@@ -80,8 +80,8 @@ void Blocked::on_pushButton_2_clicked()
         output.append(item);
     }
     ready = "";
-    for(size_t i=0; i < output.size(); ++i){
-        ready += output.size() + ",";
+    for(int i=0; i < output.size(); ++i){
+        ready += output[i] + ",";
     }
     concsettings.setValue("Sites",ready);
     concsettings.setValue("SitesV",true);

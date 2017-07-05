@@ -18,7 +18,7 @@ using namespace std;
 HostsFile Hsts;
 QList<QString> noutput;
 #if (defined (_WIN32) || defined (_WIN64))
-QSettings concsettings(QDir::currentPath() + "/config.ini", QSettings::IniFormat);
+QSettings settings(QDir::currentPath() + "/config.ini", QSettings::IniFormat);
 #else
 QSettings settings;
 #endif
