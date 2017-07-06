@@ -11,7 +11,7 @@ class HostsFile
     #if (defined (_WIN32) || defined (_WIN64))
         std::string path = "c:/Windows/System32/Drivers/etc/Hosts";
     #else
-        std::string path = "/etc/hosts";
+        std::string path = "/home/finbargiusti/hosts";
     #endif
     std::vector<std::string> lines;
 

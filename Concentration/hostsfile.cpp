@@ -49,9 +49,9 @@ bool HostsFile::check(string host)
 void HostsFile::sync(){
     string hoststr;
     ofstream file(path.c_str());
-    for (int i; i < lines.size(); ++i)
+    for (string line: lines)
     {
-        hoststr += (lines[i] + "\n");
+        hoststr += (line + "\n");
     }
     file << hoststr;
 }
