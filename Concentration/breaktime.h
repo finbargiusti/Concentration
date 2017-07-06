@@ -1,12 +1,14 @@
 #ifndef BREAKTIME_H
 #define BREAKTIME_H
 
+#include <QTimer>
 
-class BreakTime
+class BreakTime : public QObject
 {
+    Q_OBJECT
 public:
     BreakTime();
-private:
+public Q_SLOTS:
     void restore();
 };
 

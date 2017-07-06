@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "ui_mainwindow.h"
 #include "hostsfile.h"
+#include <breaktime.h>
 #include <string>
 #include <fstream>
 #include "blocked.h"
@@ -55,7 +56,7 @@ void MainWindow::mainLoop(){
     if (ui->listWidget->count() == 0) {
 
         if(active == true){
-            Hsts.add();
+            Hsts.cancel();
             Hsts.sync();
         }
         active = false;
@@ -113,6 +114,17 @@ void MainWindow::on_pushButton_clicked()
     nready = tempnready;
     settings.setValue("Tasks",nready);
     settings.setValue("TasksV",true);
+    if (ui->listWidget->count() == 0){
+
+    } else {
+        Hsts.cancel();
+        Hsts.sync();
+        QMessageBox::information(
+            this,
+            tr("Break Time!"),
+            tr("Congrats on finishing a task! Now you get 15 minutes of free access to your favourite websites!"),
+        BreakTime();
+    }
     usleep(100);
 }
 
